@@ -1,32 +1,29 @@
-Rotate 2D Matrix
+# Rotate 2D Matrix
 
-This Python script implements a function to rotate a 2D matrix 90 degrees clockwise in-place.
+This project contains a function to rotate a 2D matrix 90 degrees clockwise.
 
-Functionality
+## Function Description
 
-The provided function rotate_2d_matrix takes a 2D matrix represented as a list of lists and modifies it directly to achieve a 90-degree clockwise rotation.
+### `rotate_2d_matrix(matrix)`
 
-How it Works
+This function takes a square 2D matrix as input and rotates it 90 degrees clockwise in place.
 
-The function employs a two-step approach:
+#### Parameters
 
-Transposition: It iterates through the upper triangle of the matrix, swapping elements to effectively transpose the rows and columns.
-Row Reversal: After transposing, it reverses the elements in each row to complete the 90-degree clockwise rotation.
-Example Usage
+- `matrix` (list of list of int): The 2D matrix to rotate. It should be a square matrix (NxN).
 
-The script includes an example demonstrating how to use the rotate_2d_matrix function. It creates a sample matrix, rotates it, and prints the resulting rotated matrix.
+#### Returns
 
-Requirements
+The function does not return any value. It modifies the input matrix in place.
 
-Python 3 (interpreter specified in the first line)
-No external modules are imported
-Running the Script
+## How the Function Works
 
-Save the code as 0-rotate_2d_matrix.py.
-Ensure the file has execute permissions (e.g., chmod +x 0-rotate_2d_matrix.py).
-Run the script from the command line: ./0-rotate_2d_matrix.py
-The output will display the rotated matrix.
+The function uses nested loops to access each element of the matrix and swap its values with the elements located at the corresponding positions in the rotated matrix. The rotation is performed layer by layer, starting from the outermost layer and moving towards the innermost layer.
 
-Additional Notes
+Here is a step-by-step explanation of the rotation process for a given element at position `(i, j)`:
 
-The code adheres to the pycodestyle style guide for Python code formatting.
+1. Store the element at `(i, j)` in a temporary variable `temp`.
+2. Move the element from the left to the top.
+3. Move the element from the bottom to the left.
+4. Move the element from the right to the bottom.
+5. Move the temporary variable `temp` to the right.
